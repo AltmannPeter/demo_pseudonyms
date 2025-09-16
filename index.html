@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudonym Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="header-row">
+    <h1>Pseudonym Generator</h1>
+    <button id="reset-button" class="danger-button">Reset All</button>
+  </div>
+
+  <div class="section left-accented-box" style="--accent-color: #6b7280;">
+    <h2>Prerequisite: Pseudonym Seed</h2>
+    <label for="seed-display">Seed Value (Hexadecimal)</label>
+    <textarea id="seed-display" rows="1" readonly placeholder="No seed yet"></textarea>
+    <button id="generate-seed-button">Generate Nym Seed</button>
+
+    <details class="infobox">
+      <summary>🔐 How to sync pseudonyms across devices?</summary>
+      <p>You can copy this seed and reuse it on another device to regenerate the same pseudonyms. The seed is a portable, secure identifier.</p>
+    </details>
+
+    <details class="infobox">
+      <summary>🎲 How is this seed generated?</summary>
+      <p>The pseudonym seed can be a 256-bit value generated using a cryptographically secure random number generator. For this demo it is just a random 256-bit number.</p>
+    </details>
+  </div>
+
+  <div class="section left-accented-box" style="--accent-color: #fa6060;">
+    <h2>Step 1a: Register Alias (global alias mapping)</h2>
+    <label for="domain-input-linked">Domain</label>
+    <input id="domain-input-linked" placeholder="e.g., google.com">
+
+    <label for="alias-input-linked">Alias</label>
+    <input id="alias-input-linked" placeholder="e.g., slyfox92">
+
+    <div class="button-row">
+      <button id="register-alias-button-linked">Register Alias</button>
+      <button id="toggle-registry-button-linked">Show Registry</button>
+    </div>
+
+    <div id="registry-display-linked" style="display: none;">
+      <h3>Site → Aliases</h3>
+      <table class="registry-table" id="site-registry-table-linked">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Aliases</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h3>Alias ↔ Index</h3>
+      <table class="registry-table" id="alias-registry-table-linked">
+        <thead>
+          <tr>
+            <th>Alias</th>
+            <th>Index</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section left-accented-box" style="--accent-color: #fa6060;">
+    <h2>Step 1b: Register Alias (unlinked)</h2>
+    <label for="domain-input-unlinked">Domain</label>
+    <input id="domain-input-unlinked" placeholder="e.g., google.com">
+
+    <label for="alias-input-unlinked">Alias</label>
+    <input id="alias-input-unlinked" placeholder="e.g., slyfox92">
+
+    <div class="button-row">
+      <button id="register-alias-button-unlinked">Register Alias</button>
+      <button id="toggle-registry-button-unlinked">Show Registry</button>
+    </div>
+
+    <div id="registry-display-unlinked" style="display: none;">
+      <h3>Site → Aliases</h3>
+      <table class="registry-table" id="site-registry-table-unlinked">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Index</th>
+            <th>Alias</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section left-accented-box" style="--accent-color: #10b981;">
+    <h2>Step 2: Generate Pseudonym</h2>
+
+    <div>
+      <label>Registry Type</label>
+      <div id="registry-type-options" class="radio-group">
+        <label><input type="radio" name="registry-type" value="linked"> Linked</label>
+        <label><input type="radio" name="registry-type" value="unlinked"> Unlinked</label>
+      </div>
+    </div>
+
+    <div>
+      <label>Domain</label>
+      <div id="domain-options" class="radio-group"></div>
+    </div>
+
+    <div>
+      <label>Alias</label>
+      <div id="alias-options" class="radio-group"></div>
+    </div>
+
+    <label for="pseudonym-output">Pseudonym (Hex)</label>
+    <textarea id="pseudonym-output" readonly></textarea>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
