@@ -122,6 +122,154 @@
     <textarea id="pseudonym-output" readonly></textarea>
   </div>
 
+  <div class="section left-accented-box" style="--accent-color: #6366f1;">
+    <h2>Requirements Evaluation</h2>
+    <table class="registry-table">
+      <thead>
+        <tr>
+          <th>Requirement</th>
+          <th>Status</th>
+          <th>Description</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>PA_01</td>
+          <td>✅ Met</td>
+          <td>SHALL support pseudonym generation</td>
+          <td>Uses HMAC-based pseudonym generation</td>
+        </tr>
+        <tr>
+          <td>PA_02</td>
+          <td>✅ Met</td>
+          <td>SHALL support pseudonym-based authentication</td>
+          <td>Through selective disclosure of pseudonym</td>
+        </tr>
+        <tr>
+          <td>PA_03</td>
+          <td>✅ Met</td>
+          <td>SHALL support cross-device use of pseudonyms</td>
+          <td>Through sync of nym_seed and mapping tables.</td>
+        </tr>
+        <tr>
+          <td>PA_04</td>
+          <td>✅ Met</td>
+          <td>SHALL support multiple pseudonyms per service</td>
+          <td>Multiple indexes mapped to a domain</td>
+        </tr>
+        <tr>
+          <td>PA_05</td>
+          <td>✅ Met</td>
+          <td>SHOULD enable user-chosen alias per pseudonym</td>
+          <td>User explicitly enters alias at nym registration</td>
+        </tr>
+        <tr>
+          <td>PA_06a</td>
+          <td>✅ Met</td>
+          <td>SHALL prompt user if multiple pseudonyms exist</td>
+          <td>User selects domain and alias manually</td>
+        </tr>
+        <tr>
+          <td>PA_06b</td>
+          <td>✅ Met</td>
+          <td>SHOULD display aliases in pseudonym prompt</td>
+          <td>Alias list is displayed for user selection</td>
+        </tr>
+        <tr>
+          <td>PA_07</td>
+          <td>❓ Unclear</td>
+          <td>Requirement not relevant</td>
+          <td>Storing pseudonym vs ability to generate it</td>
+        </tr>
+        <tr>
+          <td>PA_08</td>
+          <td>❓ Unclear</td>
+          <td>Advanced policy or lifecycle controls</td>
+          <td>Requires features not in scope (e.g., revocation, rotation)</td>
+        </tr>
+        <tr>
+          <td>PA_08a</td>
+          <td>❓ Unclear</td>
+          <td>Support pseudonym lifecycle awareness</td>
+          <td>Not in scope for this demo</td>
+        </tr>
+        <tr>
+          <td>PA_09</td>
+          <td>✅ Met</td>
+          <td>SHALL support viewing all pseudonyms and their associated services</td>
+          <td>Through mappings</td>
+        </tr>
+        <tr>
+          <td>PA_10</td>
+          <td>❌ Not Met</td>
+          <td>Conflicting requirement</td>
+          <td>Conflicts with WUA_18; ignored in current demo</td>
+        </tr>
+        <tr>
+          <td>PA_11</td>
+          <td>❌ Not Met</td>
+          <td>Conflicting requirement</td>
+          <td>Conflicts with WUA_18; ignored in current demo</td>
+        </tr>
+        <tr>
+          <td>PA_12</td>
+          <td>✅ Met</td>
+          <td>RP SHALL be able to verify link between pseudonym and attestation</td>
+          <td>Pseudonym is a disclosable attribute</td>
+        </tr>
+        <tr>
+          <td>PA_13</td>
+          <td>✅ Met</td>
+          <td>RP SHALL be able to validate binding</td>
+          <td>Pseudonym is a disclosable attribute</td>
+        </tr>
+        <tr>
+          <td>PA_14</td>
+          <td>❌ Not Met</td>
+          <td>SHALL store information required for authenticating with pseudonym in WSCA / WSCD</td>
+          <td>Not applicable when nym is disclosable attribute</td>
+        </tr>
+        <tr>
+          <td>PA_15</td>
+          <td>✅ Met</td>
+          <td>RP SHALL NOT be able to map nym to real identity</td>
+          <td>Nym generation using HMAC is one way</td>
+        </tr>
+        <tr>
+          <td>PA_16</td>
+          <td>✅ Met</td>
+          <td>SHALL NOT reveal the same pseudonym to different services unless the user choses to do so</td>
+          <td>Met with Step 1a</td>
+        </tr>
+        <tr>
+          <td>PA_17</td>
+          <td>⚠️ Conflict</td>
+          <td>Conflicts with PA_16</td>
+          <td>Assuming req is moderated by PA_16, then met using HMAC</td>
+        </tr>
+        <tr>
+          <td>PA_18</td>
+          <td>✅ Met</td>
+          <td>SHALL have enough entropy to avoid nym collision</td>
+          <td>Met using 256-bit random nym seed</td>
+        </tr>
+        <tr>
+          <td>PA_19</td>
+          <td>✅ Met</td>
+          <td>SHALL NOT share nym aliases with any RP</td>
+          <td>Met using HMAC(seed, index)</td>
+        </tr>
+        <tr>
+          <td>PA_20-22</td>
+          <td>⛔ Irrelevant</td>
+          <td>SHALL verify RP identity before anything else</td>
+          <td>Out of scope for this demo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <script src="script.js"></script>
 </body>
 
