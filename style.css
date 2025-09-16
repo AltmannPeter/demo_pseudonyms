@@ -1,0 +1,216 @@
+:root {
+  --color-bg: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-secondary-bg: #f1f5f9;
+  --color-text: #0f172a;
+  --color-muted-text: #64748b;
+  --color-button: #2563eb;
+  --color-button-text: white;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: var(--color-text);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+  background-color: var(--color-secondary-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  resize: none;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-button);
+  color: var(--color-button-text);
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+.section {
+  background: white;
+  padding: 1.5rem;
+  border: 2px solid var(--color-border);
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.registry {
+  font-family: monospace;
+  white-space: pre-wrap;
+  background: var(--color-secondary-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.infobox {
+  margin-top: 1rem;
+  background-color: var(--color-secondary-bg);
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.infobox summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--color-muted-text);
+  margin-bottom: 0.5rem;
+}
+
+.infobox[open] {
+  background-color: #e2e8f0;
+}
+
+.top-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.header-row h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.danger-button {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.danger-button:hover {
+  background-color: #b91c1c;
+}
+
+.button-row {
+  margin-top: 0.5em;
+}
+
+.button-row button {
+  margin-right: 1em;
+}
+
+.registry-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.registry-table th,
+.registry-table td {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.registry-table th {
+  background-color: var(--color-secondary-bg);
+  font-weight: 600;
+}
+
+.left-accented-box {
+  background-color: #f9fafb;
+  border-left: 5px dashed var(--accent-color);
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Scoped styles based on variable */
+.left-accented-box h2 {
+  color: var(--accent-color);
+}
+
+.left-accented-box button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.left-accented-box button:hover {
+  background-color: color-mix(in srgb, var(--accent-color) 85%, black);
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 0.5em 0;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  background-color: var(--color-secondary-bg);
+  padding: 0.3em 0.6em;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  user-select: none;
+}
+
+.radio-group input[type="radio"] {
+  margin: 0;
+}
